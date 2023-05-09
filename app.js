@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const port = 8080;
 
-app.get('/', (req, res) => res.send('Greetings from WHIZIT Services!'));
+app.get('/', (req, res) => res.send('Welcome Servosys!'));
 
 app.listen(port);
 console.log(`App running on http://localhost:${port}`);
