@@ -1,0 +1,22 @@
+version: 0.0
+os: linux
+files:
+  - source: / 
+    destination: /
+hooks:
+BeforeInstall:
+  - location: genesis1/install_dependencies.sh
+    timeout: 300
+    runas: root
+AfterInstall:
+  - location: genesis1/install_nginx.sh
+    timeout: 300
+    runas: root
+ApplicationStop:
+  - location: genesis1/stop_nginx.sh
+    timeout: 300
+    runas: root    
+ApplicationStart:
+  - location: genesis1/start_nginx.sh
+    timeout: 300
+    runas: root
